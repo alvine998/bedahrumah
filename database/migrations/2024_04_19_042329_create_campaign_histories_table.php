@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('campaign_histories', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->integer('campaign_id');
+            $table->string('campaign_name');
+            $table->text('content');
+            $table->json('created_by');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

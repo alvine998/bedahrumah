@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->string('thumbnail');
+            $table->text('content');
+            $table->enum('status', ['active', 'inactive', 'draft']);
+            $table->json('created_by');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

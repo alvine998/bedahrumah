@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('image');
+            $table->integer('seq');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }
